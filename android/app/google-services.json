@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "66575008180",
+    "project_id": "fir-authentication-caabe",
+    "storage_bucket": "fir-authentication-caabe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66575008180:android:42dbacf719be08cd49f2e1",
+        "android_client_info": {
+          "package_name": "com.example.firebase_authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66575008180-h9d2cn8u79f8gegjn7q4qt2j9jgp6msg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp0BhQK59v2b6tiulN7JxyD7asTAj6dr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66575008180-h9d2cn8u79f8gegjn7q4qt2j9jgp6msg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

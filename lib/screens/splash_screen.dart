@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'dashboard/home_screen.dart';
-import 'login_screen.dart';
+import 'dashboard-student/home_screen.dart';
+import 'login_registor_screen.dart';
 
 class splash_screen extends StatefulWidget {
   const splash_screen({Key? key}) : super(key: key);
@@ -19,11 +19,13 @@ class _splash_screenState extends State<splash_screen> {
   @override
   void initState() {
     getValidationData().whenComplete(() {
-   Timer(Duration(seconds: 1), () { Navigator.pushReplacement(
+   Timer(const Duration(seconds: 1), () { Navigator.pushReplacement(
        context,
        MaterialPageRoute(
            builder: (context) =>
-           Email == null ? LoginScreen() : HomeScreen())); });
+           Email == null ?
+           const LoginScreen()
+               : const HomeScreen())); });
 
     });
     super.initState();
@@ -36,14 +38,13 @@ class _splash_screenState extends State<splash_screen> {
     setState(() {
       Email = obtainedEmail;
     });
-    print(Email);
+    print('SharePreference ==  ${Email}');
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/photo.jpg'),fit: BoxFit.cover),
-    ));
+    return Center(
+      child: Image.asset("assets/images/chat.png"),
+    );
   }
 }
