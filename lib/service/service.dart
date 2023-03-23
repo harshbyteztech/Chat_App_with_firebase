@@ -9,6 +9,7 @@ import 'package:firebase_authentication/model_class/group_model.dart';
 import 'package:firebase_authentication/model_class/message_model.dart';
 import 'package:firebase_authentication/model_class/messsage_user_model.dart';
 import 'package:firebase_authentication/model_class/user_token_model.dart';
+import 'package:firebase_authentication/sharedpreferences/shared_preferences.dart';
 import 'package:firebase_authentication/widget/login_signup_reset_method.dart';
 import 'package:http/http.dart' as http;
 import '../model_class/chatmodel.dart';
@@ -189,15 +190,18 @@ Future<List<group_chat_model>?> groupmessageDelete(String? Messageid, String? gr
   return null;
 }
 
-Future<user_token_model?>sendnotification(username,token, String msg) async {
+Future<user_token_model?>sendnotification(token, String msg) async {
   try{
     final body = {
       "to":token,
       "notification": {
-        "title": username,
+        "title": userName,
         "body": msg,
         "android_channel_id": "chats"
-      }
+      },
+      "data": {
+        "some_data": "User ID: userName",
+      },
     };
     // dfDZ88PWSqmfYTsEcWL05w:APA91bGTcCC3YTD4Vzg4rYyDba2uS2TLFuSCFeFukSyz_KHA14wNXGSyeyIspyUTc6DVCC6FW6p2stzFoQ5_IHPTRIxPYhGAKKqDRlhSL2BfyDRqFuDuzZe5nklwx1zbnR-hMM2VroNN
     var url = Uri.parse('https://fcm.googleapis.com/fcm/send');

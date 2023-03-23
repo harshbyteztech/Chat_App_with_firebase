@@ -186,7 +186,6 @@ class _message_screenState extends State<message_screen> {
       messages = messagecontroller.text;
 
       sendnotification(
-          widget.messageUser?.target_username,
           widget.userdata == null ? token : widget.userdata?.token,
           messagecontroller.text.toString());
       var messageid = DateTime.now().millisecondsSinceEpoch.toString();

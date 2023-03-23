@@ -276,19 +276,6 @@ class _MessageCardState extends State<MessageCard> {
                         endIndent: mq.width * .04,
                         indent: mq.width * .04,
                       ),
-
-                    //edit option
-                    // if (MessageList.type == "text" && isMe)
-                    //   _OptionItem(
-                    //       icon: const Icon(Icons.edit, color: Colors.blue, size: 26),
-                    //       name: 'Edit Message',
-                    //       onTap: () {
-                    //         //for hiding bottom sheet
-                    //         Navigator.pop(context);
-                    //         _showMessageUpdateDialog();
-                    //       }),
-
-                    //delete option
                     if (isMe)
                       _OptionItem(
                           icon: const Icon(Icons.delete_forever,
@@ -333,70 +320,6 @@ class _MessageCardState extends State<MessageCard> {
             );
         });
   }
-
-  // dialog for updating message content
-  // void _showMessageUpdateDialog() {
-  //
-  //   String updatedMsg = "${MessageList.message}";
-  //
-  //   showDialog(
-  //       context: context,
-  //       builder: (_) => AlertDialog(
-  //             contentPadding: const EdgeInsets.only(
-  //                 left: 24, right: 24, top: 20, bottom: 10),
-  //
-  //             shape: RoundedRectangleBorder(
-  //                 borderRadius: BorderRadius.circular(20)),
-  //
-  //             //title
-  //             title: Row(
-  //               children: const [
-  //                 Icon(
-  //                   Icons.message,
-  //                   color: Colors.blue,
-  //                   size: 28,
-  //                 ),
-  //                 Text(' Update Message')
-  //               ],
-  //             ),
-  //
-  //             //content
-  //             content: TextFormField(
-  //               initialValue: updatedMsg,
-  //               maxLines: null,
-  //               onChanged: (value) => updatedMsg = value,
-  //               decoration: InputDecoration(
-  //                   border: OutlineInputBorder(
-  //                       borderRadius: BorderRadius.circular(15))),
-  //             ),
-  //
-  //             //actions
-  //             actions: [
-  //               //cancel button
-  //               MaterialButton(
-  //                   onPressed: () {
-  //                     //hide alert dialog
-  //                     Navigator.pop(context);
-  //                   },
-  //                   child: const Text(
-  //                     'Cancel',
-  //                     style: TextStyle(color: Colors.blue, fontSize: 16),
-  //                   )),
-  //
-  //               //update button
-  //               MaterialButton(
-  //                   onPressed: () {
-  //                     //hide alert dialog
-  //                     Navigator.pop(context);
-  //                     // APIs.updateMessage(widget.messages, updatedMsg);
-  //                   },
-  //                   child: const Text(
-  //                     'Update',
-  //                     style: TextStyle(color: Colors.blue, fontSize: 16),
-  //                   ))
-  //             ],
-  //           ));
-  // }
 }
 
 //custom options card (for copy, edit, delete, etc.)
